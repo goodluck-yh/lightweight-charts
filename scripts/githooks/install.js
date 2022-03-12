@@ -61,21 +61,21 @@ function main() {
 		fs.mkdirSync(hooksDir, { recursive: true });
 	}
 
-	for (const hookName of ['pre-commit']) {
-		const hookEntry = fixPath(path.join(hooksDir, hookName));
-
-		try {
-			// try to unlink first: avoid writing thru a symlink
-			fs.unlinkSync(hookEntry);
-		} catch (e) {
-			// do nothing
-		}
-
-		const relativePath = fixPath(path.join(targetDir, hookName));
-		fs.writeFileSync(hookEntry, getHookScript(relativePath), { encoding: 'utf-8' });
-
-		fs.chmodSync(hookEntry, '0755');
-	}
+	// for (const hookName of ['pre-commit']) {
+	// 	const hookEntry = fixPath(path.join(hooksDir, hookName));
+	//
+	// 	try {
+	// 		// try to unlink first: avoid writing thru a symlink
+	// 		fs.unlinkSync(hookEntry);
+	// 	} catch (e) {
+	// 		// do nothing
+	// 	}
+	//
+	// 	const relativePath = fixPath(path.join(targetDir, hookName));
+	// 	fs.writeFileSync(hookEntry, getHookScript(relativePath), { encoding: 'utf-8' });
+	//
+	// 	fs.chmodSync(hookEntry, '0755');
+	// }
 
 	console.log(`${magentaColor}Installed to ${gitRoot}${noColor}`);
 }
