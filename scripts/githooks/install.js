@@ -47,7 +47,6 @@ fi`;
 }
 
 function main() {
-	console.log(`${magentaColor}__dirname is ${__dirname}${noColor}`);
 	const gitRoot = getGitRoot();
 	if (gitRoot === null) {
 		console.error(`${redColor}It seems that it isn't a git repo. Did you use git to clone the repo? Skip installing git-hooks${noColor}`);

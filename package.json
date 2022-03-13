@@ -16,7 +16,6 @@
   "main": "index.js",
   "typings": "dist/typings.d.ts",
   "files": [
-    "scripts/**",
     "dist/**",
     "index.js"
   ],
