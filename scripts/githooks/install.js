@@ -53,7 +53,9 @@ function main() {
 		return;
 	}
 
-	console.log(`${magentaColor}Installing githooks...${noColor}`);
+	return;
+
+	/**console.log(`${magentaColor}Installing githooks...${noColor}`);
 
 	const targetDir = fs.realpathSync(__dirname);
 	const hooksDir = path.join(gitRoot, '.git', 'hooks');
@@ -78,6 +80,7 @@ function main() {
 	}
 
 	console.log(`${magentaColor}Installed to ${gitRoot}${noColor}`);
+	 **/
 }
 
 if (require.main === module) {
