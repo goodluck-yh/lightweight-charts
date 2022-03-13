@@ -13,12 +13,10 @@ function fixPath(p) {
 
 function getGitRoot() {
 	let directory = fs.realpathSync(__dirname);
-	console.log(`${magentaColor}directory is ${directory}${noColor}`);
 
 	// eslint-disable-next-line no-constant-condition
 	while (true) {
 		const gitDir = path.join(directory, '.git');
-		console.log(`${magentaColor}gitDir is ${gitDir}${noColor}`);
 		if (fs.existsSync(gitDir) && fs.statSync(gitDir).isDirectory()) {
 			return fixPath(directory);
 		}
@@ -51,7 +49,6 @@ fi`;
 function main() {
 	console.log(`${magentaColor}__dirname is ${__dirname}${noColor}`);
 	const gitRoot = getGitRoot();
-	console.log(`${magentaColor}gitRoot is ${gitRoot}${noColor}`);
 	if (gitRoot === null) {
 		console.error(`${redColor}It seems that it isn't a git repo. Did you use git to clone the repo? Skip installing git-hooks${noColor}`);
 		return;
